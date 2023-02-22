@@ -1,0 +1,46 @@
+{
+    "env": "testnet",
+    "main": "@pageblock-dapp-container/main",
+    "assets": "@pageblock-dapp-container/assets",
+    "moduleDir": "modules",
+    "modules": {
+        "@pageblock-dapp-container/assets": {
+            "path": "assets",
+            "dependencies": []
+        },
+        "@pageblock-dapp-container/main": {
+            "path": "main",
+            "dependencies": [
+                "@pageblock-dapp-container/interface",
+                "@pageblock-dapp-container/utils",
+                "@pageblock-dapp-container/store",
+                "@ijstech/eth-wallet",
+                "@pageblock-dapp-container/assets"
+            ]
+        },
+        "@pageblock-dapp-container/interface": {
+            "path": "interface",
+            "dependencies": [
+                "@ijstech/eth-wallet"
+            ]
+        },
+        "@pageblock-dapp-container/utils": {
+            "path": "utils",
+            "dependencies": [
+                "@ijstech/eth-wallet",
+                "@pageblock-dapp-container/interface"
+            ]
+        },
+        "@pageblock-dapp-container/store": {
+            "path": "store",
+            "dependencies": [
+                "@ijstech/eth-wallet",
+                "@pageblock-dapp-container/interface"
+            ]
+        }
+    },
+    "dependencies": {
+        "@ijstech/eth-wallet": "*",
+        "@ijstech/eth-contract": "*"
+    }
+}
